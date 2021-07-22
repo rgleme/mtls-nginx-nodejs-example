@@ -15,7 +15,7 @@ const options = {
 
 const app = express();
 
-app.get('/', (req, res) => {
+app.get('/mtls', (req, res) => {
     if(!isEmpty(req.socket.getPeerCertificate())) {
         return verify_certificate(req, res);
     }
@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
     if(req.header("ssl_client_verify") !== "SUCCESS")
         return res.status(403).send("Forbidden - please provide valid certificate.")
 
-    res.status(200).json(`Hello ${req.header("ssl_client")}, your certificate was issued by ${req.header("SSL_Client_Issuer")}!`);
+    res.status(200).json(`Hello Rodolfo..... ${req.header("X-Ssl-Cert")}  ${req.header("ssl_client")}, your certificate was issued by ${req.header("SSL_Client_Issuer")}!`);
 });
 
 https.createServer(options, app).listen(port, () => {

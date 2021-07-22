@@ -1,3 +1,9 @@
+This is a fork from https://github.com/judif/mtls-nginx-nodejs-example
+
+In this example, there are mutual paths within and without MTLS.
+
+Common used for Financial Architectures
+
 # mTLS example with NGINX and NodeJS
 
 A simple example on how to do client authentication with certificates - mutual TLS (mTLS).
